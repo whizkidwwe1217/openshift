@@ -28,7 +28,8 @@ gem 'mysql2'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 gem 'tiny_tds'
-gem 'activerecord-sqlserver-adapter'
+gem 'activerecord-sqlserver-adapter', '4.2.17'
+gem 'active-support', '4.2.5'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
