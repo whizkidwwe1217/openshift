@@ -25,7 +25,7 @@ openshift:
   <<: *mysql
   port: 3307
   username: adminHU3YtxJ
- password: gD669jGkCECK
+  password: gD669jGkCECK
   database: wafe
 
 default: &default
@@ -53,6 +53,6 @@ production:
   database: "<%=ENV['OPENSHIFT_APP_NAME']%>"
   username: "<%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>"
   password: "<%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>"
-  host:     <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
-  port:     <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
-  soket:    <%=ENV['OPENSHIFT_MYSQL_DB_SOCKET']%>
+  host: <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+  port: <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
+  soket: <%=ENV['OPENSHIFT_MYSQL_DB_SOCKET']%>
