@@ -12,7 +12,6 @@ sqlserver: &sqlserver
   username: sa
   password: masterkey
 
-
 mysql: &mysql
   adapter: mysql2
   encoding: utf8
@@ -22,6 +21,13 @@ mysql: &mysql
   username: root
   password: masterkey
   
+openshift:
+  <<: *mysql
+  port: 3307
+  username: adminHU3YtxJ
+ password: gD669jGkCECK
+  database: wafe
+
 default: &default
   adapter: sqlite3
   pool: 5
@@ -43,5 +49,10 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
+  <<: *mysql
+  database: "<%=ENV['OPENSHIFT_APP_NAME']%>"
+  username: "<%=ENV['OPENSHIFT_MYSQL_DB_USERNAME']%>"
+  password: "<%=ENV['OPENSHIFT_MYSQL_DB_PASSWORD']%>"
+  host:     <%=ENV['OPENSHIFT_MYSQL_DB_HOST']%>
+  port:     <%=ENV['OPENSHIFT_MYSQL_DB_PORT']%>
+  soket:    <%=ENV['OPENSHIFT_MYSQL_DB_SOCKET']%>
