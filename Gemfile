@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-# git_source(:github) do |repo_name|
-#   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-#   "https://github.com/#{repo_name}.git"
-# end
+git_source(:github) do |repo_name|
+  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
+  "https://github.com/#{repo_name}.git"
+end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -28,8 +28,7 @@ gem 'mysql2'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 gem 'tiny_tds'
-gem 'activerecord-sqlserver-adapter', '4.2.17'
-gem 'active-support', '4.2.5'
+gem 'activerecord-sqlserver-adapter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -40,4 +39,4 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :jruby]
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
